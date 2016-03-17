@@ -1,9 +1,9 @@
-##Development tips
-
-General
+Development tips
 ===
 
-    You haven't put the shared library in a location where the loader can find it.
+##General
+
+You haven't put the shared library in a location where the loader can find it.
 look inside the /usr/local/opencv and /usr/local/opencv2 folders and see if
 either of them contains any shared libraries (files beginning in lib and
 usually ending in .so). when you find them, create a file called
