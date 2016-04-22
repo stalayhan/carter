@@ -1,0 +1,6 @@
+{
+  "name": "Carter",
+  "tagline": "Car Computer System",
+  "body": "# carter\r\nCar Computer System\r\n\r\n|Job|Start Date|End Date|Total Day|Status|\r\n|---|---|---|---|---|\r\n|Raspberry Pi WebCam Test|2016-04-16|2016-04-17|2|Waiting verification|\r\n|Documentation|2016-04-17|   |   |In development|\r\n|Orange Pi Entegration with Armbian|2016-04-16|   |   |In development|\r\n|Lane Detection|2016-04-18|   |   |In development|\r\n\r\n=====\r\n\r\n|Issue List|Notes|\r\n|---|---|\r\n|Booting problem on Orange Pi Mini Pc 2 #01|   |\r\n|OpenCV 2.4.9 system environment problem raise to 2.4.12 - (just my old kernel)|   |\r\n\r\n=====\r\n\r\n|Resolved Issue|Notes|\r\n|---|---|\r\n|Booting problem with Orange Pi mini PC 2 is resolved using Armbian|   |\r\n\r\n=====\r\n\r\n|Feature List|Notes|\r\n|---|---|\r\n|Make robust line detection algorithm - ex. works smoothly at night|   |\r\n|Insert a fan cooler to Orange Pi|   |\r\n|Write test code for modules using bash script|   |",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
