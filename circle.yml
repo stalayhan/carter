@@ -1,0 +1,8 @@
+dependencies:
+    pre:
+        - sudo apt-get install build-essential gcc g++; cd lane-detection
+    override:
+        - make
+test:
+    override:
+        - make
