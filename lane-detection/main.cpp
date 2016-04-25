@@ -9,6 +9,7 @@
 #include <math.h>
 #include <time.h> // for clock_t
 #include "lane_detector.hpp"
+#include "utils.h" // for debugging
 
 #define TEST_VIDEO_PATH2 "/home/talayhhan/test11_divx6.1.1.avi"
 #define TEST_VIDEO_PATH "/home/talayhhan/road-01.avi"
@@ -61,7 +62,7 @@ void get_frame_from_video(const string path)
     }
 }
 
-int main(void)
+int main(int argc, const char **argv)
 {
     get_frame_from_video(TEST_VIDEO_PATH);
 
