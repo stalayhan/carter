@@ -26,16 +26,16 @@ namespace talayhan
     {
         //currFrame = startFrame;                                    //if image has to be processed at original size
 
-        currFrame = Mat(320,480,CV_8UC1,0.0);                        //initialised the image size to 320x480
-        resize(startFrame, currFrame, currFrame.size());             // resize the input to required size
+        currFrame = Mat(IMAGE_WIDTH, IMAGE_HEIGHT, CV_8UC1, ZERO_F);        // initialised the image size to 320x480
+        resize(startFrame, currFrame, currFrame.size());                    // resize the input to required size
 
-        temp      = Mat(currFrame.rows, currFrame.cols, CV_8UC1, 0.0);//stores possible lane markings
-        temp2     = Mat(currFrame.rows, currFrame.cols, CV_8UC1, 0.0);//stores finally selected lane marks
+        temp      = Mat(currFrame.rows, currFrame.cols, CV_8UC1, ZERO_F);   //stores possible lane markings
+        temp2     = Mat(currFrame.rows, currFrame.cols, CV_8UC1, ZERO_F);   //stores finally selected lane marks
 
-        vanishingPt    = currFrame.rows/5;                           //for simplicity right now
-        ROIrows        = currFrame.rows - vanishingPt;               //rows in region of interest
-        minSize        = 0.00015 * (currFrame.cols*currFrame.rows);  //min size of any region to be selected as lane
-        maxLaneWidth   = 0.045 * currFrame.cols;                     //approximate max lane width based on image size
+        vanishingPt    = currFrame.rows/VANISHING_DIVIDER;                  //for simplicity right now
+        ROIrows        = currFrame.rows - vanishingPt;                      //rows in region of interest
+        minSize        = 0.00015 * (currFrame.cols * currFrame.rows);       //min size of any region to be selected as lane
+        maxLaneWidth   = 0.045 * currFrame.cols;                            //approximate max lane width based on image size
         smallLaneArea  = 7 * minSize;
         longLane       = 0.3 * currFrame.rows;
         ratio          = 4;
