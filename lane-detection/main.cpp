@@ -40,10 +40,10 @@ void get_frame_from_video(VideoCapture cap)
         Mat croppedImage = frame(myROI);
         cvtColor(croppedImage, croppedImage, CV_BGR2GRAY);
 
-        //start = clock();
+        start = clock();
         detector.nextFrame(croppedImage);
-        //stop = clock();
-        // cout<<"fps : "<<1.0/(((double)(stop-start))/ CLOCKS_PER_SEC)<<endl;
+        stop = clock();
+        debug("fps : %f", 1.0/(((double)(stop-start))/ CLOCKS_PER_SEC));
 
 		//wait for 'esc' key press for 10 ms. If 'esc' key is pressed, break loop
         if(waitKey(10) == 27){
