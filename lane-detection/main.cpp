@@ -10,28 +10,21 @@
 #include <time.h> // for clock_t
 #include "lane_detector.hpp"
 #include "utils.h" // for debugging
-
-#define TEST_VIDEO_PATH2 "/home/talayhhan/test11_divx6.1.1.avi"
-#define TEST_VIDEO_PATH "/home/talayhhan/road-01.avi"
+#include <pthread.h>
 
 using namespace std;
 using namespace cv;
 using namespace talayhan;
+
 clock_t start, stop;
 
-void get_frame_from_video(const string path)
+void get_frame_from_video(VideoCapture cap)
 {
     Mat frame;
-    Rect myROI(0, 0, 720, (480-220));		// restrict the video frame (x1, y1, x2, y2)
-    VideoCapture cap(path); 				// open the video file for reading
-
-    if ( !cap.isOpened() )  				// if not success, exit program
-        cout << "Cannot open the video file" << endl;
-
-    //cap.set(CV_CAP_PROP_POS_MSEC, 300); //start the video at 300ms
+    Rect myROI(0, 0, RECT_FRAME_X2, RECT_FRAME_Y2);		// restrict the video frame (x1, y1, x2, y2)
 
     double fps = cap.get(CV_CAP_PROP_FPS); 	//get the frames per seconds of the video
-    cout << "Input video's Frame per seconds : " << fps << endl;
+    debug("Input video's Frame per seconds : %f", fps);
 
     cap.read(frame);
     LaneDetector detector(frame);
@@ -40,7 +33,7 @@ void get_frame_from_video(const string path)
     {
         bool bSuccess = cap.read(frame); // read a new frame from video
         if (!bSuccess){
-            cout << "Cannot read the frame from video file" << endl;
+            debug("Cannot read the frame from video file");
             break;
         }
         Mat croppedImage = frame(myROI);
@@ -61,10 +54,33 @@ void get_frame_from_video(const string path)
         }
     }
 }
+/*
+ * Print the usage
+ * */
+void usage(){
+    printf( "carter - car computer system\n"
+            "carter [-c default=CAMERA-0] [-v VIDEO_PATH] [-h]\n"
+            );
+}
+int checkArgument(int argc, const char **argv)
+{
+    if(argc == 0){
+        usage();
+        return 1;
+    }
+
+    return 0;
+}
 
 int main(int argc, const char **argv)
 {
-    get_frame_from_video(TEST_VIDEO_PATH);
+    checkArgument(argc, argv);
+    VideoCapture cap(TEST_VIDEO_PATH);     // open the video file for reading
+    if ( !cap.isOpened() )  	// if not success, exit program
+        log_err("Cannot open the video file");
+
+    //cap.set(CV_CAP_PROP_POS_MSEC, 300); //start the video at 300ms
+    get_frame_from_video(cap);
 
     waitKey(0);
     destroyAllWindows(); // destroy all of the opened HighGUI windows

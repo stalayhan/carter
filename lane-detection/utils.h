@@ -3,6 +3,11 @@
 
 extern int errno = 0;
 
+#define TEST_VIDEO_PATH2 "/home/talayhhan/test11_divx6.1.1.avi"
+#define TEST_VIDEO_PATH "/home/talayhhan/road-01.avi"
+#define RECT_FRAME_X2 720
+#define RECT_FRAME_Y2 (480-220)
+
 #ifdef NDEBUG
 #define debug(M, ...)
 #else
