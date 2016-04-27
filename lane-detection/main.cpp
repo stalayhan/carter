@@ -9,7 +9,6 @@
 #include <math.h>
 #include <time.h> // for clock_t
 #include "lane_detector.hpp"
-#include "utils.h" // for debugging
 #include <pthread.h> // for parallelisation
 
 using namespace std;

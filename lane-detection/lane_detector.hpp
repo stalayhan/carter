@@ -24,6 +24,9 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 #include <vector>
+#ifndef __utils_h__
+#include "utils.h"
+#define __utils_h__
 
 using namespace cv;
 using namespace std;
