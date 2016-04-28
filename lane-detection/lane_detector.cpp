@@ -17,7 +17,6 @@
  */
 
 #include "lane_detector.hpp"
-#include "utils.h"
 
 namespace talayhan
 {

@@ -10,6 +10,7 @@
 #include <time.h> // for clock_t
 #include "lane_detector.hpp"
 #include <pthread.h> // for parallelisation
+#include "utils.h"
 
 using namespace std;
 using namespace cv;
