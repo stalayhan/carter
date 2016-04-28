@@ -1,7 +1,18 @@
 #ifndef __utils_h__
 #define __utils_h__
 
-extern int errno = 0;
+#define TEST_VIDEO_PATH2 "~/test11_divx6.1.1.avi"
+#define TEST_VIDEO_PATH "/home/talayhan/road-01.avi"
+#define RECT_FRAME_X2 720
+#define RECT_FRAME_Y2 (480-220)
+#define DELAY_MS 10
+#define DEBUG_DELAY_MS 800
+#define IMAGE_WIDTH 320
+#define IMAGE_HEIGHT 480
+#define VANISHING_DIVIDER 5
+
+#define ZERO_F 0.0
+#define ZERO_I 0
 
 #ifdef NDEBUG
 #define debug(M, ...)
@@ -10,13 +21,13 @@ extern int errno = 0;
 #endif
 
 #define clean_errno() (errno == 0 ? "None" : strerror(errno))
-#define log_err(M, ...) fprintf(stderr, "[ERROR] (%s:%d: errno: %s) " M "\n", __FILE__, __LINE__, clean_errno(), ##__VA_ARGS__)
-#define log_warn(M, ...) fprintf(stderr, "[WARN] (%s:%d: errno: %s) " M "\n", __FILE__, __LINE__, clean_errno(), ##__VA_ARGS__)
+#define log_err(M, ...) fprintf(stderr, "[ERROR] (%s:%d:) " M "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#define log_warn(M, ...) fprintf(stderr, "[WARN] (%s:%d:) " M "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 #define log_info(M, ...) fprintf(stderr, "[INFO] (%s:%d) " M "\n", __FILE__, __LINE__, ##__VA_ARGS__)
-#define check(A, M, ...) if(!(A)) { log_err(M, ##__VA_ARGS__); errno=0; goto error; }
-#define sentinel(M, ...)  { log_err(M, ##__VA_ARGS__); errno=0; goto error; }
+#define check(A, M, ...) if(!(A)) { log_err(M, ##__VA_ARGS__); }
+#define sentinel(M, ...)  { log_err(M, ##__VA_ARGS__); }
 #define check_mem(A) check((A), "Out of memory.")
-#define check_debug(A, M, ...) if(!(A)) { debug(M, ##__VA_ARGS__); errno=0; goto error; }
+#define check_debug(A, M, ...) if(!(A)) { debug(M, ##__VA_ARGS__); }
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -32,6 +43,4 @@ extern int errno = 0;
 #define FAIL -1
 
 #define MAX_BUFF_SIZE 4095
-
 #endif
-

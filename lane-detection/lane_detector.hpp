@@ -24,23 +24,13 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 #include <vector>
+#include <stdio.h>
+#include "utils.h"
 
 using namespace cv;
 using namespace std;
 
 namespace talayhan{
-
-#define TEST_VIDEO_PATH2 "/home/talayhhan/test11_divx6.1.1.avi"
-#define TEST_VIDEO_PATH "/home/talayhhan/road-01.avi"
-#define RECT_FRAME_X2 720
-#define RECT_FRAME_Y2 (480-220)
-#define DELAY_MS 10
-#define IMAGE_WIDTH 320
-#define IMAGE_HEIGHT 480
-#define VANISHING_DIVIDER 5
-
-#define ZERO_F 0.0
-#define ZERO_I 0
 
     class LaneDetector
     {

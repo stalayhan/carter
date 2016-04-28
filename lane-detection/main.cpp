@@ -77,7 +77,7 @@ int main(int argc, const char **argv)
     checkArgument(argc, argv);
     VideoCapture cap(TEST_VIDEO_PATH);                      // open the video file for reading
     if ( !cap.isOpened() )  	                            // if not success, exit program
-        log_err("Cannot open the video file");
+        log_err("Cannot open the video file:%s", TEST_VIDEO_PATH);
 
     //cap.set(CV_CAP_PROP_POS_MSEC, 300); //start the video at 300ms
     get_frame_from_video(cap);
