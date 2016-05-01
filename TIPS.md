@@ -78,3 +78,18 @@ int main(int argc, char** argv)
 Done! You can now build and run the sample application to make sure it's working. You should get a new window displaying the image from your webcam. You should now be able to copy the project and use it as a template for future work.
 
 **References:** http://jonniedub.blogspot.com.tr/2013/01/setting-up-codeblocks-ide-for-use-with.html
+
+
+##WiringPI for OrangePI mini PC 2
+
+Here is quick installation for WiringPI library for OrangePI 
+
+```sh
+    git clone https://github.com/zhaolei/WiringOP.git -b h3 
+    chmod +x ./build
+    sudo ./build
+```
+##TODO-LIST
+* Control fan cooler to stabilize temperature using WiringPI
+* Steering the vibration motor
+
