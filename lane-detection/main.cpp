@@ -75,7 +75,8 @@ int checkArgument(int argc, const char **argv)
 int main(int argc, const char **argv)
 {
     checkArgument(argc, argv);
-    VideoCapture cap(TEST_VIDEO_PATH);                      // open the video file for reading
+    //VideoCapture cap(TEST_VIDEO_PATH);                      // open the video file for reading
+    VideoCapture cap(0);                      // open the video file for reading
     if ( !cap.isOpened() )  	                            // if not success, exit program
         log_err("Cannot open the video file:%s", TEST_VIDEO_PATH);
 

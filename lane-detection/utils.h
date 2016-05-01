@@ -2,7 +2,7 @@
 #define __utils_h__
 
 #define TEST_VIDEO_PATH2 "~/test11_divx6.1.1.avi"
-#define TEST_VIDEO_PATH "/home/talayhan/road-01.avi"
+#define TEST_VIDEO_PATH "/home/carter/road-01.avi"
 #define RECT_FRAME_X2 720
 #define RECT_FRAME_Y2 (480-220)
 #define DELAY_MS 10
