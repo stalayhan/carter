@@ -21,7 +21,7 @@
 
 namespace talayhan
 {
-	RNG rng(12345);
+    RNG rng(12345);
 
     LaneDetector::LaneDetector(Mat startFrame)
     {

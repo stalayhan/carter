@@ -22,6 +22,10 @@
 #include <opencv2/core/core.hpp>
 #include "opencv2/imgproc/imgproc.hpp"
 #include <opencv2/highgui/highgui.hpp>
+#ifdef SPEED_DETECTION
+#include <opencv2/video/background_segm.hpp>
+#include <opencv2/opencv.hpp>
+#endif
 #include <iostream>
 #include <vector>
 #include <stdio.h>
