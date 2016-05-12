@@ -50,7 +50,7 @@ namespace talayhan
         namedWindow("midstep", WINDOW_AUTOSIZE);
         namedWindow("currframe", WINDOW_AUTOSIZE);
         namedWindow("laneBlobs", WINDOW_AUTOSIZE);
-	namedWindow("imshow", WINDOW_AUTOSIZE);
+		namedWindow("speed", WINDOW_AUTOSIZE);
 
         getLane();
     }
