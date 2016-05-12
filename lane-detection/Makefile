@@ -1,7 +1,7 @@
 CXX=g++
 LIBS=`pkg-config --libs opencv`
 INC=`pkg-config --cflags opencv`
-FLAGS=-g -Wall
+FLAGS=-g -Wall -DSPEED_DETECTION
 
 main:main.o lane_detector.o
 	$(CXX) -o $@ $^ $(LIBS) $(FLAGS)

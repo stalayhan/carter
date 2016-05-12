@@ -49,7 +49,8 @@ namespace talayhan
         namedWindow("lane", WINDOW_AUTOSIZE);
         namedWindow("midstep", WINDOW_AUTOSIZE);
         namedWindow("currframe", WINDOW_AUTOSIZE);
-        namedWindow("laneBlobs",WINDOW_AUTOSIZE);
+        namedWindow("laneBlobs", WINDOW_AUTOSIZE);
+	namedWindow("imshow", WINDOW_AUTOSIZE);
 
         getLane();
     }
@@ -71,7 +72,6 @@ namespace talayhan
         //updateSensitivity();
 
         //ROI = bottom half
-        debug("currFrame.rows: %d - currFrame.cols: %d", currFrame.rows, currFrame.cols);
         for(i = vanishingPt; i < currFrame.rows; i++){
             for(j = 0; j < currFrame.cols; j++){
                 temp.at<uchar>(i,j)    = 0;
@@ -81,7 +81,6 @@ namespace talayhan
 #ifndef NDEBUG
         usleep(DEBUG_DELAY_MS); // delay for debug
 #endif
-        debug("vanishingPt: %d", vanishingPt);
         imshow("currframe", currFrame);
         blobRemoval();
     }
