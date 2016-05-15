@@ -1,6 +1,11 @@
 all:
-	cd lane-detection; make
-	cd webcam-test; make
+	cd src; make
+
+test-modules:
+	cd test_modules; make
+
 clean:
-	cd lane-detection; make clean
-	cd webcam-test; make clean
+	cd src; make clean
+
+clean-test-modules:
+	cd test_modules; make clean
