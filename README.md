@@ -1,6 +1,6 @@
 # carter
 
-Car Computer System - [![Circle CI](https://circleci.com/gh/stalayhan/carter.svg?style=svg)](https://circleci.com/gh/stalayhan/carter)
+Car Computer System - [![Circle CI](https://circleci.com/gh/stalayhan/carter.svg?style=svg)](https://circleci.com/gh/stalayhan/carter) ![Progress](http://progressed.io/bar/75?title=progress)
 
 ## Description
 
