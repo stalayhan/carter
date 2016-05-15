@@ -19,7 +19,7 @@ This project created for CSE396 - Project II course on GTU.
 * OpenCV >= 3.0 - https://github.com/Itseez/opencv/archive/3.0.0.tar.gz
 * WiringBP - https://github.com/zhaolei/WiringOP
 
-This project tested and verified on Linux i3 4.2.0-36-generic #41~14.04.1-Ubuntu system. If you 
+This project tested and verified on Linux i3 4.2.0-36-generic #41~14.04.1-Ubuntu system. If you test on Windows feel comfortable to get in touch.
 
 ## Install a checkout from git
 
