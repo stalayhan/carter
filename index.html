@@ -41,7 +41,62 @@
         <h1>
 <a id="carter" class="anchor" href="#carter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>carter</h1>
 
-<p>Car Computer System</p>
+<p>Car Computer System - <a href="https://circleci.com/gh/stalayhan/carter"><img src="https://circleci.com/gh/stalayhan/carter.svg?style=svg" alt="Circle CI"></a> <img src="http://progressed.io/bar/75?title=progress" alt="Progress"></p>
+
+<h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h2>
+
+<p>Car computer system detects road lane, traffic density and estimated oil consumption using computer vision technologies on embedded device.</p>
+
+<p>This project created for CSE396 - Project II course on GTU.</p>
+
+<h3>
+<a id="lane-detection" class="anchor" href="#lane-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lane Detection</h3>
+
+<h3>
+<a id="speed-and-traffic-density-detection" class="anchor" href="#speed-and-traffic-density-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Speed and Traffic Density Detection</h3>
+
+<h3>
+<a id="estimated-average-oil-consumption" class="anchor" href="#estimated-average-oil-consumption" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Estimated Average Oil Consumption</h3>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>OpenCV &gt;= 3.0 - <a href="https://github.com/Itseez/opencv/archive/3.0.0.tar.gz">https://github.com/Itseez/opencv/archive/3.0.0.tar.gz</a>
+</li>
+<li>WiringBP - <a href="https://github.com/zhaolei/WiringOP">https://github.com/zhaolei/WiringOP</a>
+</li>
+</ul>
+
+<p>This project tested and verified on Linux i3 4.2.0-36-generic #41~14.04.1-Ubuntu system. If you </p>
+
+<h2>
+<a id="install-a-checkout-from-git" class="anchor" href="#install-a-checkout-from-git" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install a checkout from git</h2>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/stalayhan/carter   <span class="pl-c"># clone project from git repo</span>
+<span class="pl-c1">cd</span> carter                                       <span class="pl-c"># enter project dir</span>
+make                                            <span class="pl-c"># make src - if you want to build modules as separate use make test-modules</span>
+./main -v <span class="pl-k">&lt;</span>Video Path<span class="pl-k">&gt;</span>                          <span class="pl-c"># if you do not use -v option, default using first webcam on the system.</span></pre></div>
+
+<h2>
+<a id="hardware" class="anchor" href="#hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hardware</h2>
+
+<ul>
+<li>Vibration Motor - 5V</li>
+<li>OrangePi Mini PC 2 - 1.6 Ghz Quad Core - 1 Gb Ram - Armbian x64</li>
+<li>10K Resistor and Transistor for controlling vibration motor</li>
+<li>5V DC Fan - (5000 RPM) for controlling temperature</li>
+</ul>
+
+<h2>
+<a id="to-do-and-future-works" class="anchor" href="#to-do-and-future-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TO-DO and Future Works</h2>
+
+<ul>
+<li>Improve speed detection algorithm using frame difference on the line detection</li>
+<li>Add virtual lane if system does not detect any.</li>
+<li>Add traffic sign detection using red and blue colors density without machine learning.</li>
+</ul>
 
 <table>
 <thead>
@@ -55,7 +110,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Raspberry Pi WebCam Test</td>
+<td>Orange Pi WebCam Test</td>
 <td>2016-04-16</td>
 <td>2016-04-17</td>
 <td>2</td>
@@ -66,21 +121,21 @@
 <td>2016-04-17</td>
 <td></td>
 <td></td>
-<td>In development</td>
+<td>DONE</td>
 </tr>
 <tr>
 <td>Orange Pi Entegration with Armbian</td>
 <td>2016-04-16</td>
-<td></td>
-<td></td>
-<td>In development</td>
+<td>2016-04-23</td>
+<td>7</td>
+<td>DONE</td>
 </tr>
 <tr>
 <td>Lane Detection</td>
 <td>2016-04-18</td>
 <td></td>
 <td></td>
-<td>In development</td>
+<td>DONE</td>
 </tr>
 </tbody>
 </table>
@@ -96,11 +151,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Booting problem on Orange Pi Mini Pc 2 #01</td>
-<td></td>
-</tr>
-<tr>
-<td>OpenCV 2.4.9 system environment problem raise to 2.4.12 - (just my old kernel)</td>
+<td>Integration whole modules</td>
 <td></td>
 </tr>
 </tbody>
@@ -118,7 +169,11 @@
 <tbody>
 <tr>
 <td>Booting problem with Orange Pi mini PC 2 is resolved using Armbian</td>
-<td></td>
+<td>DONE</td>
+</tr>
+<tr>
+<td>OpenCV 2.4.9 system environment problem raise to 2.4.12 - (just my old kernel)</td>
+<td>DONE</td>
 </tr>
 </tbody>
 </table>
@@ -147,6 +202,41 @@
 </tr>
 </tbody>
 </table>
+
+<h2>
+<a id="pull-request-as-always-welcome" class="anchor" href="#pull-request-as-always-welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pull Request as always welcome</h2>
+
+<ul>
+<li>Fork the repo and create your branch from dev.</li>
+<li>If you've changed codes, update the documentation.</li>
+<li>Make sure your code lints.</li>
+<li>Change README.md if necessary</li>
+</ul>
+
+<h2>
+<a id="project-members" class="anchor" href="#project-members" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Members</h2>
+
+<ul>
+<li>Furkan Aksoy</li>
+<li>Hazel Pala</li>
+<li>Eyüp Şen</li>
+<li>Yavuz Şen</li>
+<li>Mahmut Ensari Güvengil</li>
+<li>Oğuzcan Pamuk</li>
+<li>Samet Talayhan - @talayhans</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LICENSE</h2>
+
+<p>The MIT License (MIT)
+Copyright © 2016 GTU</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
       </section>
 
     </div>
